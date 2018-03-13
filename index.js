@@ -8,7 +8,16 @@ var responses = {};
 var request = function(options, then) {
   var error = null;
   var body;
-  var response = {code: 200};
+  var response = {
+    headers: {}, 
+    statusMessage: 'OK', 
+    statusCode: 200, 
+    code: 200
+  };
+
+  if (options.headers != undefined) {
+    response.headers = options.headers;
+  }
 
   var json  = JSON.stringify(options);
   var hash  = md5(json);

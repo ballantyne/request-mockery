@@ -28,7 +28,7 @@ describe('RequestMockery', function() {
 
 
   describe('FakeLib', function() {
-    describe('return options', function() {
+    describe('test', function() {
       it('invalid should work', function(done) {
         var api = new FakeLib();
         api.exec({}, function(err, resp, body) {

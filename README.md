@@ -2,7 +2,7 @@
 request-mockery
 ------------
 
-This is a very simple library to help write tests when using the request http library.  It lets you pass through the options or it also allows you to set a return value.  Current way of setting the return value is a little brittle, and if other folks have any ideas about being able to set the value or return function in a more intuitive way, your input would be very appreciated.  Mockery registers stubs at the beginning of a describe block, so I would like to make it be able to supply several different responses each time it is registered. I take a md5 of the request options and that is how I attach a response.  I think that the md5 will possibly change often, so that is going to get annoying.  Is there another way to design that?
+This is a very simple library to help write tests using [mockery](https://github.com/mfncooper/mockery) when testing code that uses the [request](https://github.com/request/request) http module.  It lets you pass through the options or it also allows you to set a return value.  Current way of setting the return value is a little brittle, and if other folks have any ideas about being able to set the value or return function in a more intuitive way, your input would be very appreciated.  Mockery registers stubs at the beginning of a describe block, so I would like to make it be able to supply several different responses each time it is registered. I take a md5 of the request options and that is how I attach a response.  I think that the md5 will possibly change often, so that is going to get annoying.  Is there another way to design that?
 
 For now, you can either register a response or you can not register a response and the library will just return the options.
 

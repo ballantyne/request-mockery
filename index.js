@@ -40,12 +40,14 @@ var request = function(options, then) {
       console.log(hash, options)
     }
   }
+  
+  response.body = body;
 
-  if (body != undefined && options != undefined && _.keys(options).indexOf('json') == -1 && typeof body == 'object') {
-    body = JSON.stringify(body);
+  if (isJSON(body)) {
+    body = JSON.parse(body);
   }
 
-  response.body = body;
+
 
   if (then) {
     then(error, response, body);

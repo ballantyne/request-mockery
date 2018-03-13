@@ -1,7 +1,7 @@
 {
   "name": "request-mockery",
-  "version": "1.0.0",
-  "description": "request-mockery ------------",
+  "version": "1.0.1",
+  "description": "request-mockery",
   "main": "index.js",
   "directories": {
     "test": "test"

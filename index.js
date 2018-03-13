@@ -8,7 +8,7 @@ var responses = {};
 var request = function(options, then) {
   var error = null;
   var body;
-  var status = {code: 200};
+  var response = {code: 200};
 
   var json  = JSON.stringify(options);
   var hash  = md5(json);
@@ -19,8 +19,8 @@ var request = function(options, then) {
       if (responses[hash].error != undefined) {
         error   = responses[hash].error;
       }
-      if (responses[hash].status != undefined) {
-        status   = responses[hash].status;
+      if (responses[hash].response != undefined) {
+        response   = responses[hash].response;
       }
     } else {
       body = responses[hash]
@@ -36,8 +36,10 @@ var request = function(options, then) {
     body = JSON.stringify(body);
   }
 
+  response.body = body;
+
   if (then) {
-    then(error, status, body);
+    then(error, response, body);
   }
 }
 

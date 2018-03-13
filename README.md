@@ -72,7 +72,7 @@ var assert  = require('assert');
 var request = require(path.join(__dirname, '..', 'index'));
 
 describe('RequestMockery', function() {
-  var FakeLib;
+  var FakeModule;
 
   before(function(){
     mockery.enable({
@@ -85,7 +85,7 @@ describe('RequestMockery', function() {
       "03684ab85d63ef1261c356d19b1f235e": {"arbitrary": true}
     })
     mockery.registerMock('request', request);
-    FakeLib = require(path.join(__dirname, 'fake_lib'));
+    FakeModule = require(path.join(__dirname, 'fake_module'));
  
   });
 
@@ -94,10 +94,10 @@ describe('RequestMockery', function() {
   }); 
 
 
-  describe('FakeLib', function() {
+  describe('FakeModule', function() {
     describe('test', function() {
       it('invalid should work', function(done) {
-        var api = new FakeLib();
+        var api = new FakeModule();
         api.exec({}, function(err, resp, body) {
           assert.equal(err, null);
           assert.equal(resp.code, 200);
@@ -106,7 +106,7 @@ describe('RequestMockery', function() {
         })
       });
       it('return response', function(done) {
-        var api = new FakeLib();
+        var api = new FakeModule();
         api.exec({
           url: 'https://google.com', 
           method: 'GET'
@@ -119,7 +119,7 @@ describe('RequestMockery', function() {
       });
 
       it('can set response', function(done) {
-        var api = new FakeLib();
+        var api = new FakeModule();
         api.exec({
           url: 'https://yahoo.com', 
           method: 'GET'

@@ -43,11 +43,9 @@ var request = function(options, then) {
   
   response.body = body;
 
-  if (isJSON(body)) {
+  if (isJSON(body) && typeof body == 'string') {
     body = JSON.parse(body);
   }
-
-
 
   if (then) {
     then(error, response, body);

@@ -136,7 +136,7 @@ describe('RequestMockery', function() {
 
 ```
 
-Donations
+Tips
 ------------
 
 Here are a few addresses where you can send me bitcoins.  If this library helps you and you are feeling especially generous because you were able to mine tons of that brand new altcoin super early in it's life I know that you will feel compelled to buy me a baguette with magical internet money.  

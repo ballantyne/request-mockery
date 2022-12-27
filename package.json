@@ -1,6 +1,6 @@
 {
   "name": "request-mockery",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "request-mockery",
   "main": "index.js",
   "directories": {
